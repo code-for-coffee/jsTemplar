@@ -1,0 +1,57 @@
+README
+
+jsTemplar is a simple, easy to use and expand upon set of scripts to allow you to easily create static sites. It has been built and tested with jQuery 1.9+.
+
+WHY NOT SERVER SIDE INCLUDES?
+
+This is a workaround for static websites that do not allow for server side includes. Sure, it'd be easier to renderPartial() in ASP.NET MVC or use include() or require_once() in PHP but not every server has them installed. This is a quick workaround to make life easier. This is used for scenarios where as the developer you have no control over the server you're deploying a static website to.
+
+GETTING STARTED
+
+jsTemplar uses a pre-defined layout pages to allow you to easily add content to any page. It requires minimal plugin to your current static pages.
+
+To get started, you'll want to build out your initial template page. Typically it will contain just the <head></> content of your page. You then .load() a variety of pages through the $(document.ready(); event. Each .load() will .empty() and then .append() the included HTML page.
+
+Example of including a page:
+
+<script type="text/javascript">
+	$(document).ready(function () {
+        $("#template_item").load("layout/template_item.html");
+    });
+</script>
+
+<!-- this is your div to add the content -->
+<div id="childContent"></div>
+<!-- end content -->
+
+We currently use a built in function that allows you to dynamically show/hide content called clearAndLoad(args). It is placed on any event that you wish to re-render or render new content. Pass a jQuery element (class or ID) as the args. The function empties and then repopulates #content_body data via an Ajax call.
+
+Primitive Ex:
+
+<onclick="clearAndLoad("content/example.html");">Example</a>
+
+However, we recommend building out infrastructure to assist with this. Example:
+
+function menuChange(contentID) 
+{
+    switch (contentID.text) {
+    case "Example":
+        clearAndLoad("content/services/247365monitoring.html");
+        break;
+	default:
+		return;
+	}
+}
+
+Paired with: 
+
+<a href="#" onclick="menuChange(this);">Example</a>
+
+THINGS TO KEEP IN MIND
+
+This is a work in process.
+
+TODO IN THE FUTURE:
+
+* Dynamic menu creation via parsing JSON objects. 
+* <head></> variables via JSON objects.
