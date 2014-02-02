@@ -2,6 +2,6 @@
 // v0.1 - github.com/code-for-coffee
 // ------------------------------------------------------------
 function clearAndLoad(source) {
-    $("#content_body").empty();
-    $("#content_body").load(source);
+    $("#template_body").empty();
+    $("#template_body").load(source);
 }
