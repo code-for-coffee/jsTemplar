@@ -2,9 +2,13 @@ README
 
 jsTemplar is a simple, easy to use and expand upon set of scripts to allow you to easily create static sites. It has been built and tested with jQuery 1.9+.
 
+To view an example: http://coffeebean.io/jsTemplar/
+
 WHY NOT SERVER SIDE INCLUDES?
 
 This is a workaround for static websites that do not allow for server side includes. Sure, it'd be easier to renderPartial() in ASP.NET MVC or use include() or require_once() in PHP but not every server has them installed. This is a quick workaround to make life easier. This is used for scenarios where as the developer you have no control over the server you're deploying a static website to.
+
+Using this pattern, you can easily and rapidly deploy static web pages. jsTemplar uses a template-view design pattern modified for use with just Javascript. The aim of this design pattern is to create a theme, split it up based on semantic HTML5, and allow for rapid content addition without the need of any server side code.
 
 GETTING STARTED
 
