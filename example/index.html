@@ -1,9 +1,13 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" manifest="site.appcache">
 <head>
-<title>jsTemplar Example</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script type="text/javascript" src="Scripts/jsTemplar.jquery.js"></script>
+	<meta charset="utf-8">
+	<meta keyworkd="HTML5, Javascript, CSS, Design Pattern">
+	<meta description="javascript template view design pattern">
+	<title>jsTemplar - template design pattern for javascript</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="Scripts/jsTemplar.jquery.js"></script>
 </head>
 <body>
 <script type="text/javascript">
@@ -13,20 +17,142 @@ $(document).ready(function () {
     $("#template_footer").load("layout/footer.html");
 });
 </script>
-<style>
-ul li {
+<style type="text/css">
+	header, section, footer, aside, nav, article, figure, figcaption, hgroup {
+	display: block;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	color: navy;
+}
+a:active {
+	color: navy;
+}
+a:hover {
+	color: navy;
+}
+a:visited {
+	color: navy;
+}
+body {
+	text-align: center;
+	background-attachment: fixed;
+}
+
+h1 {
+	font: bold 20px verdana, sans-serif;
+}
+
+h2 {
+	font: bold 14px verdana, sans-serif;
+}
+
+article {
+	background: #FFFBCC;
+	border: 1px solid #999999;
+	padding: 20px;
+	margin-bottom: 15px;
+}
+
+article footer {
+	text-align: right;
+}
+
+time {
+	color: #999999;
+	font-family: courier;
+}
+
+figcaption {
+	font: italic 14px verdana, sans-serif;
+	border: 1px dotted #999999;
+}
+
+div {
+	width: 100px;
+	margin: 20px;
+	padding: 10px;
+	border: 1px solid #000000;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 15px auto;
+	text-align: left;
+	border: 1px;
+}
+
+#main_header {
+	background: -webkit-linear-gradient(top right, #F5C884, #FFFBCC);
+	background: -moz-linear-gradient(top right, #F5C884, #FFFBCC);
+	border: 1px solid #999999;
+	padding: 20px;
+	box-shadow: navy 2px 2px 5px;
+	text-shadow: navy 1px 1px 5px;
+	font: bold 36px NewFont, sans-serif;
+}
+
+#template_nav {
+	background: #CCCCCC;
+	padding: 5px 15px;
+	border-radius: 0px 0px 50px 50px;
+	box-shadow: rgb(1,28,8) 2px 2px 5px;
+}
+
+#template_nav li {
 	display: inline-block;
+	list-style: none;
+	padding: 5px;
+	font: bold 14px verdana, sans-serif;
+}
+
+#template_body {
+	float: left;
+	width: 660px;
+	margin: 20px;
+}
+
+#main_aside {
+	float: left;
+	width: 220px;
+	margin: 20px 0px;
+	padding: 20px;
+	background: #CCCCCC;
+	box-shadow: rgb(1,28,8) 2px 2px 5px;
+}
+
+#main_footer {
+	clear: both;
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid #999999;
 }
 </style>
-<header>
-	<hgroup>
-		<h1>welcome to the jsTemplar example!</h1>
-		<h3>Be sure to poke around all of the files.</h3>
-	</hgroup>
-</header>
 
-<div id="template_nav"></div>
-<div id="template_body"></div>
-<div id="template_footer"></div>
+<div id="wrapper">
+	<header id="main_header">
+		<h1>an exmaple of a javascript design pattern</h1>
+		<h3>welcome to the jsTemplar example!</h3>
+	</header>
 
+
+<nav id="template_nav"></nav>
+<section id="template_body"></section>
+
+</section>
+
+
+<aside id="main_aside">
+	<blockquote>example v3.0</blockquote>
+	<blockquote>feel free to fork & open issues!</blockquote>
+	<p>If you have any questions/comments, email me at <a href="james@codeforcoffee.org">james [at] codeforcoffee [dot] org</a>
+</aside>
+
+<footer id="template_footer"></footer>
+</div>
 </body>

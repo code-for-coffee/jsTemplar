@@ -1,30 +1,27 @@
 <script type="text/javascript">
     function menuChange(contentID) 
     {
-      switch (contentID.text) {
-          case "Item A":
-              clearAndLoad("../content/itema.html");
+      var item = $(contentID).data();
+      console.log(item);
+      switch (item.item) {
+
+          case 1:
+              clearAndLoad("content/itema.html");
               break;
-          case "Item B":
-              clearAndLoad("../content/itemb.html");
+          case 2:
+              clearAndLoad("content/itemb.html");
               break;
-          case "Item C":
-              clearAndLoad("../content/itemc.html");
+          case 3:
+              clearAndLoad("content/itemc.html");
               break;
           default:
               break;              
       }
     }
 </script>
-<nav>
-<ul>
-    <li><a href="#" onclick="menuChange(this);">Item A</a></li>
-    <li><a href="#" onclick="menuChange(this);">Item B</a></li>
-    <li><a href="#" onclick="menuChange(this);">Item C</a></li>
-</ul>
-</nav>
 
-
-<div id="template_nav"></div>
-<div id="template_body"></div>
-<div id="template_footer"></div>
+  <ul>
+    <li><a href="#" onclick="menuChange(this);" data-item="1">About jsTemplar</a></li>
+    <li><a href="#" onclick="menuChange(this);" data-item="2">How does it work?</a></li>
+    <li><a href="#" onclick="menuChange(this);" data-item="3">Getting Started</a></li>
+  </ul>
